@@ -7,7 +7,7 @@ Build-Jdk: 1.7.0_71
 Built-By: vinicius
 Created-By: Maven Integration for Eclipse
 Specification-Title: ea-ear-app-0.0.1-SNAPSHOT
-Implementation-Build: 
+Implementation-Build: 0.0.1-SNAPSHOT
 Specification-Version: 0.0.1-SNAPSHOT
 url: 
 version: 0.0.1-SNAPSHOT

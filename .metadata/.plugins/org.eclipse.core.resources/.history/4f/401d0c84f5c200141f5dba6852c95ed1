@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<!-- Parent project for EA-APP vinicius.marcs@gmail.com 2014-08-08 -->
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.devmedia</groupId>
+	<artifactId>ea-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<inceptionYear>2014</inceptionYear>
+	<name>${project.artifactId}-${project.version}</name>
+
+	<properties>
+
+		<!-- Maven plugins versions -->
+		<maven-compiler-plugin.version>2.5.1</maven-compiler-plugin.version>
+		<maven-resources-plugin.version>2.6</maven-resources-plugin.version>
+		<version.ejb.plugin>2.3</version.ejb.plugin>
+		<maven-war-plugin.version>2.4</maven-war-plugin.version>
+		<maven-ear-plugin.version>2.9.1</maven-ear-plugin.version>
+
+		<!-- Maven plugins properties -->
+		<project.build.sourceEncoding>ISO8859-1</project.build.sourceEncoding>
+		<project.build.compile.source>1.7</project.build.compile.source>
+		<project.build.compile.target>1.7</project.build.compile.target>
+		<project.build.ear.version>5</project.build.ear.version>
+
+		<!-- Test -->
+		<junit.junit.version>4.11</junit.junit.version>
+
+		<!-- Others -->
+		<log4j.version>1.2.17</log4j.version>
+		<dom4j.version>1.6.1</dom4j.version>
+
+		<org.hamcrest.hamcrest-core.version>1.3</org.hamcrest.hamcrest-core.version>
+		<antlr.antlr.version>2.7.7</antlr.antlr.version>
+		<com.mchange.c3p0.version>0.9.2.1</com.mchange.c3p0.version>
+		<com.mchange.mchange-commons-java.version>0.2.3.4</com.mchange.mchange-commons-java.version>
+		<xml.apis.version>1.0.b2</xml.apis.version>
+		<net.sf.ehcache.ehcache-core.version>2.4.3</net.sf.ehcache.ehcache-core.version>
+		<org.slf4j.slf4j-api.version>1.6.1</org.slf4j.slf4j-api.version>
+		<org.slf4j.slf4j-simple.version>1.6.1</org.slf4j.slf4j-simple.version>
+
+		<!-- Javax -->
+		<org.javassist.javassist.version>3.15.0-GA</org.javassist.javassist.version>
+		<javax.javaee-api.version>6.0</javax.javaee-api.version>
+
+		<javax.servlet.servlet-api.version>2.5</javax.servlet.servlet-api.version>
+		<javax.validation.validation-api.version>1.0.0.GA</javax.validation.validation-api.version>
+
+		<!-- jboss dependency -->
+		<org.jboss.logging.jboss-logging.version>3.1.0.GA</org.jboss.logging.jboss-logging.version>
+		<org.jboss.spec.javax.ejb.jboss-ejb-api_3.1_spec.version>1.0.2.Final</org.jboss.spec.javax.ejb.jboss-ejb-api_3.1_spec.version>
+
+		<!-- Hibernate -->
+		<org.hibernate.c3p0.version>4.2.6.Final</org.hibernate.c3p0.version>
+		<org.hibernate.core.version>4.2.6.Final</org.hibernate.core.version>
+		<org.hibernate.entitymanager.version>4.2.6.Final</org.hibernate.entitymanager.version>
+		<org.hibernate.javax.persistence.hibernate-jpa-2.0-api.version>1.0.1.Final</org.hibernate.javax.persistence.hibernate-jpa-2.0-api.version>
+		<org.hibernate.common.commons-annotations.version>4.0.2.Final</org.hibernate.common.commons-annotations.version>
+		<org.hibernate.hibernate-ehcache.version>4.2.6.Final</org.hibernate.hibernate-ehcache.version>
+		<!-- org.hibernate.annotation.version>3.4.0.GA</org.hibernate.annotation.version -->
+		<!-- org.hibernate.ejb3-persistence.version>1.0.2.GA</org.hibernate.ejb3-persistence.version -->
+		<!-- oracle driver -->
+		<com.oracle.ojdbc6.version>11.2.0.3</com.oracle.ojdbc6.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- TEST LIB -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- Logging -->
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>dom4j</groupId>
+				<artifactId>dom4j</artifactId>
+				<version>${dom4j.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hamcrest</groupId>
+				<artifactId>hamcrest-core</artifactId>
+				<version>${org.hamcrest.hamcrest-core.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>antlr</groupId>
+				<artifactId>antlr</artifactId>
+				<version>${antlr.antlr.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.mchange</groupId>
+				<artifactId>c3p0</artifactId>
+				<version>${com.mchange.c3p0.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.mchange</groupId>
+				<artifactId>mchange-commons-java</artifactId>
+				<version>${com.mchange.mchange-commons-java.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>xml-apis</groupId>
+				<artifactId>xml-apis</artifactId>
+				<version>${xml.apis.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>net.sf.ehcache</groupId>
+				<artifactId>ehcache-core</artifactId>
+				<version>${net.sf.ehcache.ehcache-core.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${org.slf4j.slf4j-api.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-simple</artifactId>
+				<version>${org.slf4j.slf4j-simple.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- Javax -->
+			<dependency>
+				<groupId>org.javassist</groupId>
+				<artifactId>javassist</artifactId>
+				<version>${org.javassist.javassist.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>${javax.servlet.servlet-api.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.validation</groupId>
+				<artifactId>validation-api</artifactId>
+				<version>${javax.validation.validation-api.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-api</artifactId>
+				<version>${javax.javaee-api.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- JBoss -->
+			<dependency>
+				<groupId>org.jboss.logging</groupId>
+				<artifactId>jboss-logging</artifactId>
+				<version>${org.jboss.logging.jboss-logging.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.jboss.spec.javax.ejb</groupId>
+				<artifactId>jboss-ejb-api_3.1_spec</artifactId>
+				<version>${org.jboss.spec.javax.ejb.jboss-ejb-api_3.1_spec.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- Hibernate -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-c3p0</artifactId>
+				<version>${org.hibernate.c3p0.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>${org.hibernate.core.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<version>${org.hibernate.entitymanager.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate.javax.persistence</groupId>
+				<artifactId>hibernate-jpa-2.0-api</artifactId>
+				<version>${org.hibernate.javax.persistence.hibernate-jpa-2.0-api.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate.common</groupId>
+				<artifactId>hibernate-commons-annotations</artifactId>
+				<version>${org.hibernate.common.commons-annotations.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-ehcache</artifactId>
+				<version>${org.hibernate.hibernate-ehcache.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- Oracle -->
+			<dependency>
+				<groupId>com.oracle</groupId>
+				<artifactId>ojdbc6</artifactId>
+				<version>${com.oracle.ojdbc6.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- dependency> <groupId>org.hibernate</groupId> <artifactId>hibernate-annotations</artifactId> 
+				<version>${org.hibernate.annotation.version}</version> <scope>provided</scope> 
+				</dependency -->
+
+			<!-- <dependency> -->
+			<!-- <groupId>org.hibernate</groupId> -->
+			<!-- <artifactId>ejb3-persistence</artifactId> -->
+			<!-- <version>${org.hibernate.ejb3-persistence.version}</version> -->
+			<!-- <scope>provided</scope> -->
+			<!-- </dependency> -->
+		</dependencies>
+	</dependencyManagement>
+
+	<profiles>
+		<profile>
+			<id>desenv</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<env>desenv</env>
+			</properties>
+		</profile>
+		<profile>
+			<id>quality</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<env>quality</env>
+			</properties>
+		</profile>
+	</profiles>
+
+	<dependencies>
+		<!-- TEST LIB -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+
+		<!-- Logging -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>antlr</groupId>
+			<artifactId>antlr</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.mchange</groupId>
+			<artifactId>c3p0</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.mchange</groupId>
+			<artifactId>mchange-commons-java</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+		</dependency>
+
+		<!-- Javax -->
+		<dependency>
+			<groupId>org.javassist</groupId>
+			<artifactId>javassist</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+		</dependency>
+
+		<!-- JBoss -->
+		<dependency>
+			<groupId>org.jboss.logging</groupId>
+			<artifactId>jboss-logging</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.spec.javax.ejb</groupId>
+			<artifactId>jboss-ejb-api_3.1_spec</artifactId>
+		</dependency>
+
+		<!-- Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-c3p0</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.0-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate.common</groupId>
+			<artifactId>hibernate-commons-annotations</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-ehcache</artifactId>
+		</dependency>
+
+		<!-- Oracle -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+		</dependency>
+
+		<!-- dependency> <groupId>org.hibernate</groupId> <artifactId>hibernate-annotations</artifactId> 
+			</dependency -->
+
+		<!-- <dependency> -->
+		<!-- <groupId>org.hibernate</groupId> -->
+		<!-- <artifactId>ejb3-persistence</artifactId> -->
+		<!-- </dependency> -->
+
+	</dependencies>
+
+	<build>
+
+		<defaultGoal>install</defaultGoal>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>${maven-resources-plugin.version}</version>
+					<configuration>
+						<encoding>${project.build.sourceEncoding}</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven-compiler-plugin.version}</version>
+					<configuration>
+						<source>${project.build.compile.source}</source>
+						<target>${project.build.compile.target}</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-ejb-plugin</artifactId>
+					<version>${version.ejb.plugin}</version>
+					<configuration>
+						<ejbVersion>3.0</ejbVersion>
+						<generateClient>false</generateClient>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>${maven-war-plugin.version}</version>
+					<configuration>
+						<archive>
+							<addMavenDescriptor>false</addMavenDescriptor>
+							<manifest>
+								<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							</manifest>
+							<manifestEntries>
+								<version>${project.version}</version>
+								<url>${project.url}</url>
+								<Implementation-Build>${project.version}</Implementation-Build>
+							</manifestEntries>
+						</archive>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-ear-plugin</artifactId>
+					<version>${maven-ear-plugin.version}</version>
+					<configuration>
+						<version>${project.build.ear.version}</version>
+						<defaultLibBundleDir>lib</defaultLibBundleDir>
+						<archive>
+							<addMavenDescriptor>false</addMavenDescriptor>
+							<manifest>
+								<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							</manifest>
+							<manifestEntries>
+								<version>${project.version}</version>
+								<url>${project.url}</url>
+								<Implementation-Build>${project.version}</Implementation-Build>
+							</manifestEntries>
+						</archive>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<!-- DEFINE A COPIA DO ARQUIVO EAR PARA O DIRETORIO DE DEPLOYMENT deploy/ejb -->
+					<execution>
+						<id>copy-module-ear</id>
+						<phase>install</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/../../deploy/ear</outputDirectory>
+							<overwrite>true</overwrite>
+							<resources>
+								<resource>
+									<directory>${basedir}/target</directory>
+									<includes>
+										<include>*.ear</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+
+					<!-- DEFINE A COPIA DO ARQUIVO JAR PARA O DIRETORIO DE DEPLOYMENT deploy/lib -->
+					<execution>
+						<id>copy-module-jar</id>
+						<phase>install</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/../deploy/lib</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${basedir}/target</directory>
+									<includes>
+										<include>*.jar</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+	<modules>
+		<!-- MODULO AUXILIAR PARA A COPIA DOS ARQUIVO JAR DE DEPENDENCIA PARA O 
+			DIRETORIO DE DEPLOYMENT deploy/lib -->
+		<module>ea-deps-copylib</module>
+	</modules>
+
+</project>

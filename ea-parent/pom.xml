@@ -15,7 +15,7 @@
 	<properties>
 
 		<!-- Maven plugins versions -->
-		<maven-compiler-plugin.version>2.5.1</maven-compiler-plugin.version>
+		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
 		<maven-resources-plugin.version>2.6</maven-resources-plugin.version>
 		<version.ejb.plugin>2.3</version.ejb.plugin>
 		<maven-war-plugin.version>2.4</maven-war-plugin.version>
@@ -399,10 +399,10 @@
 		</dependency>
 
 		<!-- Oracle -->
-		<dependency>
-			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc6</artifactId>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.oracle</groupId> -->
+<!-- 			<artifactId>ojdbc6</artifactId> -->
+<!-- 		</dependency> -->
 
 		<!-- dependency> <groupId>org.hibernate</groupId> <artifactId>hibernate-annotations</artifactId> 
 			</dependency -->
@@ -494,7 +494,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.6</version>
 				<executions>
 					<!-- DEFINE A COPIA DO ARQUIVO EAR PARA O DIRETORIO DE DEPLOYMENT deploy/ejb -->
 					<execution>
