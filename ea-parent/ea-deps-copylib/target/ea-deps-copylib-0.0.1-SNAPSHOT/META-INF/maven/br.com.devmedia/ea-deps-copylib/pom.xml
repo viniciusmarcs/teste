@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>ea-parent</artifactId>
+        <groupId>br.com.devmedia</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    
+    <groupId>br.com.devmedia</groupId>
+    <artifactId>ea-deps-copylib</artifactId>
+    <packaging>war</packaging>
+
+    <name>${project.artifactId}-${project.version}</name>
+    
+    <dependencies>
+ 
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <!--
+                        
+                        COPIA OS ARQUIVOS NECESSARIOS PARA COLOCAR NA PASTA 
+                        DEPLOY/LIB INDICADA PARA O APPSERVER CARREGAR OS 
+                        JARS COMUNS A TODOS OS MODULOS
+                        
+                        -->
+                        <id>copy-common-libs</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/../../deploy/lib</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/target/${project.artifactId}-${project.version}/WEB-INF/lib</directory>
+                                    <includes>
+                                        <include>*.jar</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

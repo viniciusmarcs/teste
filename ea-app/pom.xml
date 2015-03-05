@@ -23,11 +23,6 @@
                 <artifactId>ea-web-app</artifactId>
                 <version>${project.version}</version>
             </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>ea-ear-app</artifactId>
-                <version>${project.version}</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -55,24 +50,7 @@
                     </archive>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-ear-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <addMavenDescriptor>false</addMavenDescriptor>
-                        <manifest>
-                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                        </manifest>
-                        <manifestEntries>
-                            <version>${project.version}</version>
-                            <url>${project.url}</url>
-                            <Implementation-Build>${build.number}</Implementation-Build>
-                        </manifestEntries>
-                    </archive>
-                </configuration>
-            </plugin>
+  
         </plugins>
         <resources>
             <resource>
@@ -84,6 +62,5 @@
     <modules>
         <module>ea-ejb-app</module>
         <module>ea-web-app</module>
-        <module>ea-ear-app</module>
     </modules>
 </project>

@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Implementation-Title: ea-ear-app-0.0.1-SNAPSHOT
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: br.com.devmedia
+Class-Path: ea-ejb-app-0.0.1-SNAPSHOT.jar
+Build-Jdk: 1.7.0_71
+Built-By: vinicius
+Created-By: Maven Integration for Eclipse
+Specification-Title: ea-ear-app-0.0.1-SNAPSHOT
+Implementation-Build: 
+Specification-Version: 0.0.1-SNAPSHOT
+url: 
+version: 0.0.1-SNAPSHOT
+

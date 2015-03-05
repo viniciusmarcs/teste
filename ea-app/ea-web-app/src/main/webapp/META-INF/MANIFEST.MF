@@ -1,3 +1,13 @@
 Manifest-Version: 1.0
-Class-Path: 
+Implementation-Title: ea-web-app-0.0.1-SNAPSHOT
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: br.com.devmedia
+Build-Jdk: 1.7.0_71
+Built-By: vinicius
+Created-By: Maven Integration for Eclipse
+Specification-Title: ea-web-app-0.0.1-SNAPSHOT
+Implementation-Build: 
+Specification-Version: 0.0.1-SNAPSHOT
+url: http://maven.apache.org
+version: 0.0.1-SNAPSHOT
 
