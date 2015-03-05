@@ -1,0 +1,22 @@
+package br.com.excecao.tratamento_excecao;
+
+/**
+ * Hello world!
+ *
+ */
+public class App {
+	public static void main(String[] args) {
+
+		System.out.println(dividePorZero());
+	}
+
+	public static void dividePorZero() throws BusinessException {
+		int a = 0;
+
+		try {
+			System.out.println(a / 2);
+		} catch (Exception e) {
+			throw new DivisaoPorZeroException();
+		}
+	}
+}

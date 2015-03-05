@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>ea-app</artifactId>
+        <groupId>br.com.devmedia</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    
+	<artifactId>ea-ejb-app</artifactId>
+    <packaging>ejb</packaging>
+    <name>${project.artifactId}-${project.version}</name>
+	<url>http://maven.apache.org</url>
+
+<!-- 	<properties> -->
+<!-- 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> -->
+
+<!-- 		<version.org.jboss.as.plugins.maven.plugin>7.3.Final</version.org.jboss.as.plugins.maven.plugin> -->
+<!-- 		<version.org.jboss.spec.jboss.javaee.6.0>3.0.0.Final</version.org.jboss.spec.jboss.javaee.6.0> -->
+
+<!-- 	</properties> -->
+
+	<dependencies>
+
+
+
+	</dependencies>
+
+</project>

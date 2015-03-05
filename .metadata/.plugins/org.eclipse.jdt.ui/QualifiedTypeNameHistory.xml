@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="br.com.excecao.tratamento_excecao.DivisaoPorZeroException"/>
+<fullyQualifiedTypeName name="br.com.excecao.tratamento_excecao.BusinessException"/>
+<fullyQualifiedTypeName name="br.com.excecao.tratamento_excecao.MerchantNotFoundException"/>
+<fullyQualifiedTypeName name="java.lang.InternalError"/>
+</qualifiedTypeNameHistroy>

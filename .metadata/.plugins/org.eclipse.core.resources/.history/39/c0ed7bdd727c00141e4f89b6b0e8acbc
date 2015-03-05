@@ -1,0 +1,56 @@
+/**
+ * 
+ */
+package br.com.excecao.tratamento_excecao;
+
+/**
+ * @author viniciustatiane
+ *
+ */
+public class DivisaoPorZeroException extends BusinessException {
+
+	/**
+	 * 
+	 */
+	public DivisaoPorZeroException() {
+		System.out.println("Não é permitido divisão por zero.");
+	}
+
+	/**
+	 * @param message
+	 */
+	public DivisaoPorZeroException(String message) {
+		super(message);
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param cause
+	 */
+	public DivisaoPorZeroException(Throwable cause) {
+		super(cause);
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param message
+	 * @param cause
+	 */
+	public DivisaoPorZeroException(String message, Throwable cause) {
+		super(message, cause);
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param message
+	 * @param cause
+	 * @param enableSuppression
+	 * @param writableStackTrace
+	 */
+	public DivisaoPorZeroException(String message, Throwable cause,
+			boolean enableSuppression, boolean writableStackTrace) {
+		super(message, cause, enableSuppression, writableStackTrace);
+		// TODO Auto-generated constructor stub
+	}
+
+}

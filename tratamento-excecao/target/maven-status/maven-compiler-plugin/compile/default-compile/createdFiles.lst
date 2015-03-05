@@ -1,0 +1,4 @@
+br/com/excecao/tratamento_excecao/BusinessException.class
+br/com/excecao/tratamento_excecao/DivisaoPorZeroException.class
+br/com/excecao/tratamento_excecao/MerchantNotFoundException.class
+br/com/excecao/tratamento_excecao/App.class

@@ -1,0 +1,13 @@
+package br.com.excecao.tratamento_excecao;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+    }
+}
